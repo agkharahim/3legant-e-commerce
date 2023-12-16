@@ -170,19 +170,32 @@ form{
 
 
 .navResponsive {
-    visibility: hidden;
-    opacity: 0;
+    display: none;
 }
 
-.navBar {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar {
     background-color: #FFAB00A3;
-    padding: 16px 160px;
+    padding: 16px 0;
 }
+
+.nav-container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+}
+.nav-header {
+    display: flex;
+    align-items:center;
+}
+
+.nav-container ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+}
+
 
 .navBar-logo {
     width: 33%;
@@ -198,13 +211,13 @@ form{
     margin: auto;
 }
 
-.navBar-list {
+/* .navBar-list {
     list-style: none;
     display: flex;
     justify-content: space-between;
   
-}
-.navBar-list li a {
+} */
+.nav-list li a {
     text-decoration: none;
     color: #000;
     font-family: 'Space Grotesk', sans-serif;
@@ -214,21 +227,23 @@ form{
 
 }
 
-.navBar-icon {
-    width: 33%;
-    margin: auto;
+.nav-icon {
     display: flex;
     gap: 16px;
     justify-content: center;
     align-items:center;
 }
 
-.navBar-icon div:last-child span {    
+.icon {
+    font-size: 22px;
+}
+
+.nav-icon div:last-child span {    
     position: relative;
     top: -2px;
 }
 
-.navBar-icon div:last-child span span {
+.nav-icon div:last-child span span {
     position: absolute;
     left: 6px;
     top: 2px;
@@ -247,18 +262,20 @@ header {
     width: 100%;
     background-color: #FFAB00A3;
     height: 800px;
+    background-size: cover;
     background-image: url(../images/header/header-img.png);
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
+    display: flex;
 }
 
 .imgPlace-content {
-    position: absolute;
+    /* position: absolute;
     right: 170px;
-    top: 222px;
+    top: 222px; */
     display: flex;
     width: 538px;
+    margin-left:auto;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -267,7 +284,7 @@ header {
 
 .imgPlace-content h2 {
     
-    width: 100%;
+    /* width: 100%; */
     font-family: 'Poppins', sans-serif;
     font-size: 80px;
     font-style: normal;
@@ -308,6 +325,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     padding: 40px 160px;
+    overflow-x: auto;
 }
 
 /* brandsLogos ends here  */
@@ -419,6 +437,7 @@ header {
 
 
 .shCHeadband {
+    /* width: 548px; */
     grid-row: 2 span;
     background-color:#F3F5F7;
 }
@@ -428,7 +447,8 @@ header {
 }
 
 .shCHeadband img {
-    height: 538px;
+    width: 100%;
+    /* height: 538px; */
     background-color: #F3F5F7;
 }
 .shCHeadband h3 { 
@@ -451,25 +471,23 @@ header {
     letter-spacing: -0.4px;
     padding-left:48px;
     padding-bottom: 48px ;
-   
-    
 }
 
 .shC-box {
-    width: 548px;
+    /* width: 548px; */
     background-color:#F3F5F7;
     position: relative;
 }
 
 .shCEarbuds img {
-    width: 548px;
-    height: 260px;
+    width: 100%;
+    /* height: 260px; */
 
 }
 
 .shcAcces img {
-    width: 548px;
-    height: 260px;
+    width: 100%;
+    /* height: 260px; */
 }
 
 .shC-box h3 { 
@@ -482,7 +500,6 @@ header {
     position: absolute;
     bottom: 80px;
 
-   
 }
 
 .shC-box h5 {
@@ -526,32 +543,32 @@ header {
 /* im sorry for this section :( i used just pictures
 tbh i can do that grid cards i didnt want waste time on it :/  */
 
-.banner {
-    width: 100%;
-    margin: 40px 0;
-}
+
 
 .bannerMain {
-    width:100%;
     display: flex;
-    justify-content: center;
+    margin-top: 100px;
 }
 
 .bannerleft {
-   width: 50%;
-   height: 532px;
+   width: 45%;
 
 }
 
 .bannerleft img {
     width: 100%;
+    height: 100%;
 }
 
 .bannerRight {
-    width: 100%;
+    width: 55%;
     height: 532px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: linear-gradient(0deg, rgba(255, 171, 0, 0.40) 0%, rgba(255, 171, 0, 0.40) 100%), #FFF;
-    padding: 101px 160px 101px 72px;
+    padding-left: 72px;
+    padding-right: 30px;
 }
 
 .bannerRight > div:first-child {
@@ -590,23 +607,32 @@ tbh i can do that grid cards i didnt want waste time on it :/  */
     margin-bottom: 12px;
 }
 
-.gridExp {
-    width: 360px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 1px;
-    column-gap:16px ;
+.timerBlocks {
+    display: flex;
+    gap: 16px;
 }
 
-.bannerTime {
-    background-color: #fff;
+.timerBlock {
+   
+    text-align: center;
+    display: flex;
+     flex-direction: column;
+}
+.timerBlock > span:first-child {
+    background-color:#fff;
+    width: 60px;
+    height: 60px;
     font-family: Poppins;
     font-size: 34px;
     font-weight: 500;
-    text-align: center;
 }
 
+.timerBlock > span:last-child {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
 .bannerDate {
     width: 60px;
     margin:auto;
@@ -911,60 +937,85 @@ footer {
 /* Responsive design !! */
 
 @media only screen and (max-width: 768px) {
-       .notBar-content {
+     
+        .notBar-content {
         text-align: center;
        }
+
        .notBar-content span:last-of-type {
             display: none;
         }
     
         .navResponsive {
-            visibility: visible;
-            opacity: 1;
+            display: block;
             width: 24px;
             height: 24px;
         }
 
-        .navBar-list {
-            display: none;
+        .nav-list  {
+            display: none !important;
         }
+
         .navBar-icon #navSearch, #navUser {
               display: none;
         }
-        
+        .icon {
+            display: n;
+        }
         .imgPlace {
+            width: 100%;
+            height: 690px;
+            margin:auto; 
+            align-items:flex-start;
+            justify-content: center;
             background-color:#FFAB00;
             background-image: url(../images/header/Paste\ image\ \(2\).png);
+            background-size:cover;
         }
+
         .imgPlace-content {
+            width: 311px;
             top:20px;
+            margin: 0;
             display: flex;
             text-align: center;
             align-items: center;
             justify-content: center;
         }
+        .imgPlace-content h2 {
+            font-size: 40px;
+            line-height: 44px;
+        }
 
         .shpColGrid {
-            display: flex;
-            flex-direction: column;
+            /* display: flex;
+            flex-direction: column; */
+            grid-template-columns: auto;
+
         }
+
         .gridBest {
             display: grid;
             grid-template-columns: auto auto;
         }
 
+    
         .bannerMain {
             display: flex;
             flex-direction: column-reverse;
             justify-content: center;
-            height: 1590px;
+            /* height: 1590px; */
+            
         }
+        
         .bannerLeft {
             width: 100%;
         }
+
         .bannerRight {
             width: 100%;
         }
+
         .bannerAlt {
             display: grid;
             grid-template-columns: auto auto;
@@ -1031,3 +1082,4 @@ footer {
             text-align: center;
             justify-content: center;
         }
+    }
